@@ -1,0 +1,39 @@
+{
+  "app": {
+    "name": "smart-student-app",
+    "version": "1.0.0",
+    "env": "development"
+  },
+  "web": {
+    "prefork": false,
+    "port": 3000
+  },
+  "log": {
+    "level": 6
+  },
+  "database": {
+    "username": "postgres",
+    "password": "root",
+    "host": "localhost",
+    "port": 5432,
+    "name": "smartstudentsdb",
+    "pool": {
+      "idle": 10,
+      "max": 100,
+      "lifetime": 300
+    }
+  },
+  "kafka": {
+    "bootstrap": {
+      "servers": "localhost:9092"
+    },
+    "group": {
+      "id": "golang-clean-architecture"
+    },
+    "auto": {
+      "offset": {
+        "reset": "earliest"
+      }
+    }
+  }
+}
