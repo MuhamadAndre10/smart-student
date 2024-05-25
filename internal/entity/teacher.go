@@ -11,7 +11,7 @@ type Teacher struct {
 	FullName    string     `gorm:"column:full_name;size:100;not null"`
 	Email       string     `gorm:"column:email;size:100;unique"`
 	Phone       string     `gorm:"column:phone;size:15;unique;not null"`
-	Gender      string     `gorm:"column:gender;type:genderType;not null"`
+	Gender      string     `gorm:"column:gender;type:gender_type;not null"`
 	BirthDate   time.Time  `gorm:"column:birth_of_date;not null"`
 	FullAddress string     `gorm:"column:full_addresses;size:255;not null"`
 	Photo       string     `gorm:"column:photo;size:255"`

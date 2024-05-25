@@ -1,4 +1,4 @@
-package helper
+package custom_type
 
 import "database/sql/driver"
 

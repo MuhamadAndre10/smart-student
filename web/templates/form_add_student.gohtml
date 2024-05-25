@@ -1,0 +1,164 @@
+{{template "base" .}}
+
+{{define "title"}}Form Add{{end}}
+
+{{define "content"}}
+
+    <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+
+            <div class="row">
+                <div class="col-xxl">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h5 class="mb-0 text-primary">Form Pengisian data santri</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action="/students" enctype="multipart/form-data">
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label" for="s_nickname">Nama Lengkap</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="fullName" id="s_nickname" placeholder="John Doe" required />
+                                    </div>
+                                </div>
+                                <div class="mb-3 d-flex align-items-center">
+                                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Kelas</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-select" id="exampleFormControlSelect1" name="class" required aria-label="Default select example">
+                                                <option selected>Pilih Kelas</option>
+                                                <option value="1">1A</option>
+                                                <option value="2">1B</option>
+                                                <option value="3">2A</option>
+                                                <option value="3">2B</option>
+                                            </select>
+                                        </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="html5-date-input" class="col-md-2 col-form-label">Tanggal lahir</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="date" name="birthDateStudent" placeholder="2021-06-18" id="html5-date-input" required />
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label" for="basic-default-email">Email</label>
+                                    <div class="col-sm-10">
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" name="emailStudent" id="basic-default-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-default-email2"/>
+                                            <span class="input-group-text" id="basic-default-email2">@gmail.com</span>
+                                        </div>
+                                        <div class="form-text">You can use letters, numbers & periods</div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label" for="basic-default-phone">No Telp</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="phoneStudent" id="basic-default-phone" class="form-control phone-mask" placeholder="+628 123 492" aria-label="+628 123 492" aria-describedby="basic-default-phone"/>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 d-flex align-items-center">
+                                    <label class="col-sm-2 col-form-label" for="basic-default-phone">Jenis kelamin</label>
+                                    <div class="col-md d-flex align-items-center">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="laki-laki" />
+                                            <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="perempuan" />
+                                            <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="address" class="col-md-2 col-form-label">Alamat Lengkap</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" name="studentAddress" type="text" placeholder="Jl Contoh 123" id="address" />
+                                    </div>
+                                </div>
+                                <div class="row mb-3 ">
+                                    <label class="col-sm-2 col-form-label" for="basic-default-phone">Keaktifan santri</label>
+                                    <div class="col-md d-flex align-items-center">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="studentActive" id="inlineRadio1" value="option1" />
+                                            <label class="form-check-label" for="inlineRadio1">Aktif</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="studentActive" id="inlineRadio2" value="option2" />
+                                            <label class="form-check-label" for="inlineRadio2">Pasif</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="divider">
+                                    <div class="divider-text">DATA ORANG TUA</div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h5 class="mb-3 text-primary">Data Ayah</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <h5 class="mb-3 text-primary">Data Ibu</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="f_nickname">Nama Lengkap Ayah</label>
+                                            <input type="text" class="form-control" name="fNickName" id="f_nickname" placeholder="John Doe" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="f_birthday" class="form-label">Tanggal lahir</label>
+                                            <input class="form-control" name="fBrith" type="date" id="f_birthday" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="f_address" class="form-label">Alamat Lengkap</label>
+                                            <input class="form-control" type="text" name="fAddress" placeholder="Jl Contoh 123" id="f_address" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="-form-label" for="f_phone">No Telp</label>
+                                            <input type="text" id="f_phone" name="fPhone" class="form-control phone-mask" placeholder="+628 123 492" aria-label="+628 123 492" aria-describedby="basic-default-phone"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="f_job">Pekerjaan</label>
+                                            <input type="text" name="fJob" class="form-control" id="f_job"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="m_nickname">Nama Lengkap Ibu</label>
+                                            <input type="text" name="mNickname" class="form-control" id="m_nickname" placeholder="John Doe" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="m_birthday" class="form-label">Tanggal lahir</label>
+                                            <input class="form-control" name="mDate" type="date" id="m_birthday" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="m_address" class="form-label">Alamat Lengkap</label>
+                                            <input class="form-control" name="mAddress" type="text" placeholder="Jl Contoh 123" id="m_address" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="m_phone">No Telp</label>
+                                            <input type="text" name="mPhone" id="m_phone" class="form-control phone-mask" placeholder="+628 123 492" aria-label="+628 123 492" aria-describedby="basic-default-phone"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="m_job">Pekerjaan</label>
+                                            <input type="text" name="mJob" class="form-control" id="m_job"  />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{{end}}

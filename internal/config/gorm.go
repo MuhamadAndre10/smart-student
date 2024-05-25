@@ -42,6 +42,42 @@ func NewDatabase(viper *viper.Viper, log *logrus.Logger) *gorm.DB {
 		panic("Error : " + err.Error())
 	}
 
+	//err = db.Migrator().DropTable(
+	//	&entity.Admin{},
+	//	&entity.Book{},
+	//	&entity.Class{},
+	//	&entity.Family{},
+	//	&entity.Schedule{},
+	//	&entity.StatusActive{},
+	//	&entity.Student{},
+	//	&entity.Teacher{},
+	//)
+	//
+	//if err != nil {
+	//	log.Fatalf("Error migrating database: %v", err)
+	//	panic("Error : " + err.Error())
+	//}
+	//
+	//log.Info("HAPUS TABEL SUKSES")
+	//
+	//err = db.AutoMigrate(
+	//	&entity.Admin{},
+	//	&entity.Book{},
+	//	&entity.Class{},
+	//	&entity.Family{},
+	//	&entity.Schedule{},
+	//	&entity.StatusActive{},
+	//	&entity.Student{},
+	//	&entity.Teacher{},
+	//)
+	//
+	//if err != nil {
+	//	log.Fatalf("Error migrating database: %v", err)
+	//	panic("Error : " + err.Error())
+	//}
+
+	//log.Info("MIGRATE TABEL SUKSES")
+
 	connection, err := db.DB()
 	if err != nil {
 		log.Fatalf("Error connecting to database: %v", err)

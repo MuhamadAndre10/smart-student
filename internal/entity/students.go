@@ -29,7 +29,7 @@ type Student struct {
 	FullAddress        string    `gorm:"column:full_addresses;size:255;not null"`
 	Email              string    `gorm:"column:email;size:100;unique"`
 	Phone              string    `gorm:"column:phone;size:15;unique;not null"`
-	Gender             string    `gorm:"column:gender;type:genderType;not null"`
+	Gender             string    `gorm:"column:gender;type:gender_type;not null"`
 	Photo              string    `gorm:"column:photo;size:255"`
 	StatusActivationID string
 	StatusActive       StatusActive `gorm:"foreignKey:StatusActivationID;references:ID"`

@@ -12,7 +12,7 @@ type Admin struct {
 	Email       string    `gorm:"column:email;unique;not null"`
 	Phone       int       `gorm:"column:no_phone;size:15;unique;not null"`
 	DateOfBirth time.Time `gorm:"column:date_of_birth"`
-	Gender      string    `gorm:"column:gender;type:genderType;not null"`
+	Gender      string    `gorm:"column:gender;type:gender_type;not null"`
 	Photo       string    `gorm:"column:photo;size:255"`
 	Password    string    `gorm:"column:password;not null"`
 	CreatedAt   time.Time `gorm:"column:created_at;autoCreateTime:milli"`
